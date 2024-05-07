@@ -54,7 +54,7 @@ export default function Header({ className }: IHeaderProps) {
         <img
           className="h-full w-full object-cover"
           src={`${getRoutePrefix()}/images/index/bg.jpeg`}
-          alt="H.L Toolkits - 小工具集合"
+          alt={PageTitle}
         />
         <div className="absolute inset-0 bg-gradient-to-r" />
       </div>

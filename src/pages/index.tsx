@@ -146,6 +146,7 @@ export default function Index() {
                       onChange={(e) => {
                         setUrl(e.target.value);
                       }}
+                      placeholder="请输入 Bilibili 链接"
                     />
                   </div>
                 </div>

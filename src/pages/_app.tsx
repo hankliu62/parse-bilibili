@@ -17,6 +17,7 @@ import type { ReactElement, ReactNode } from 'react';
 import useTopWindow from '@/hooks/useTopWindow';
 import DefaultLayout from '@/layouts/index';
 import { getRoutePrefix } from '@/utils/route';
+import { PageDescription, PageKeywords, PageTitle } from '@/constants';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -40,23 +41,17 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Head>
-        <title>天气预报 - H.L Toolkits</title>
+        <title>{PageTitle.split(' - ').reverse().join(' - ')}</title>
         <link rel="icon" href={`${getRoutePrefix()}/favicon.ico`} />
-        <meta
-          name="description"
-          content="天气预报仿佛是一位守护者，在黑夜降临之前，轻声呢喃着大自然的秘密，为我们揭开了星辰交错下的天象之谜。"
-        />
-        <meta
-          name="keywords"
-          content="天气,天气预报,最新天气,toolkit,toolkits,前端开发,前端开发工具,前端开发工具集合,在线工具,toolbox,frontend,卡鲁秋,Hank,HankLiu"
-        />
+        <meta name="description" content={PageDescription} />
+        <meta name="keywords" content={PageKeywords.join(',')} />
         <meta name="author" content="Hank.Liu" />
       </Head>
 
       {getLayout(
         <ConfigProvider locale={zhCN}>
           <Watermark
-            content={isTop ? 'HankLiu Weather' : ''}
+            content={isTop ? 'HankLiu Parse Bilibili' : ''}
             font={{ color: 'rgba(0, 0, 0, 0.1)' }}
             className="flex h-full flex-1 flex-col"
           >
