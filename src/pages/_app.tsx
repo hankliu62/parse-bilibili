@@ -46,6 +46,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="description" content={PageDescription} />
         <meta name="keywords" content={PageKeywords.join(',')} />
         <meta name="author" content="Hank.Liu" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       </Head>
 
       {getLayout(
